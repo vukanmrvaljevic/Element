@@ -128,7 +128,7 @@ button:active {
 
 @media screen and (max-width: 480px) {
     .wrapper {
-        height: 1120px;
+        height: 1170px;
     }
 
     .title-container {
@@ -136,15 +136,19 @@ button:active {
     }
 
     .form-container {
-        height: 750px;
+        height: 730px;
     }
 
     .main {
         margin-top: -320px;
     }
+
+    input[type="text"] {
+        width: 70px;
+    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
     .wrapper {
         height: 1120px;
     }
@@ -162,7 +166,7 @@ button:active {
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
     .wrapper {
         height: 1120px;
     }
@@ -176,13 +180,13 @@ button:active {
     }
 
     .main {
-        margin-top: -320px;
+        margin-top: -220px;
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
     .wrapper {
-        height: 1120px;
+        height: 1370px;
     }
 
     .title-container {
@@ -194,6 +198,6 @@ button:active {
     }
 
     .main {
-        margin-top: -320px;
+        margin-top: 10px;
     }
 }
