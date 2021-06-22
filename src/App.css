@@ -7,7 +7,7 @@ body {
 }
 
 .wrapper {
-    background: linear-gradient(to right, #e67e22, #e74c3c);
+    background: linear-gradient(to right, #052f39, #252525);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -24,13 +24,13 @@ body {
 
 .title-container {
     height: 35vh;
-    background: url("img/bg.jpeg") center center no-repeat;
+    background: url("img/bg2.png") center center no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #000;
+    color: #fff;
 }
 
 .title-container__title {
@@ -58,7 +58,7 @@ body {
 input[type="text"] {
     background-color: transparent;
     border: 0;
-    border-bottom: solid 1px #f16051;
+    border-bottom: solid 1px #cdc8c8;
     width: 30%;
     padding-bottom: 4px;
     color: #fff !important;
@@ -87,7 +87,7 @@ button {
     letter-spacing: 1px;
     font-size: 15px;
     cursor: pointer;
-    background-color: #f16051;
+    background-color: #052f39;
     color: #fff;
     font-weight: 100;
 }
@@ -120,7 +120,7 @@ button:active {
 }
 
 .weather__error {
-    color: #f16051;
+    color: #fff;
     font-size: 20px;
     letter-spacing: 1px;
     font-weight: 200;
@@ -132,7 +132,8 @@ button:active {
     }
 
     .title-container {
-        width: 850px;
+        width: 840px;
+        height: 300px;
     }
 
     .form-container {
