@@ -7,7 +7,7 @@ import Weather from "./Components/Weather"
 require("dotenv").config({ path: __dirname + "./.env" })
 
 const API_KEY = process.env.REACT_APP_API_KEY
-
+console.log(__dirname)
 class App extends React.Component {
   state = {
     temperature: undefined,
@@ -21,28 +21,33 @@ class App extends React.Component {
     e.preventDefault()
     const city = e.target.elements.city.value
     const country = e.target.elements.country.value
-    const api_call = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`
-    )
-    const weatherData = await api_call.json()
-    if (city && country) {
-      this.setState({
-        temperature: weatherData.main.temp,
-        city: weatherData.name,
-        country: weatherData.sys.country,
-        humidity: weatherData.main.humidity,
-        description: weatherData.weather[0].description,
-        error: "",
-      })
-    } else {
-      this.setState({
-        temperature: undefined,
-        city: undefined,
-        country: undefined,
-        humidity: undefined,
-        description: undefined,
-        error: "Please enter the values.",
-      })
+    try {
+      if (city && country) {
+        const api_call = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`
+        )
+        const weatherData = await api_call.json()
+        this.setState({
+          temperature: weatherData.main.temp,
+          city: weatherData.name,
+          country: weatherData.sys.country,
+          humidity: weatherData.main.humidity,
+          description: weatherData.weather[0].description,
+          error: "",
+        })
+      } else {
+        this.setState({
+          temperature: undefined,
+          city: undefined,
+          country: undefined,
+          humidity: undefined,
+          description: undefined,
+          error: "Please enter the values.",
+        })
+      }
+    } catch (error) {
+      console.log(error)
+      this.setState({ error: "There was an error retrieving the weather" })
     }
   }
 
