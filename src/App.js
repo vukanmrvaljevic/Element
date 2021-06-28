@@ -4,10 +4,10 @@ import "./App.css"
 import Titles from "./Components/Titles"
 import Form from "./Components/Form"
 import Weather from "./Components/Weather"
-require("dotenv").config({ path: __dirname + "./.env" })
+require("dotenv").config({ path: __dirname + ".env" })
 
 const API_KEY = process.env.REACT_APP_API_KEY
-console.log(__dirname)
+console.log(__dirname + ".env")
 class App extends React.Component {
   state = {
     temperature: undefined,
